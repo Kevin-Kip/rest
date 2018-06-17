@@ -35,5 +35,5 @@ Route::post('/products/create', [
 ]);
 Route::delete('/products/{id}/', [
     'as' => 'products.delete',
-    'uses' => 'ProductsController@destroy'
+    'uses' => 'ProductsController@deleteProduct'
 ]);
