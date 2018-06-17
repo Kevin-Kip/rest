@@ -14,19 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/products', [
-    'as' => "products.all",
-    'uses' => "ProductsController@showAllProducts"
-]);
-Route::get('/products/{id}', [
-    'as' => "products.one",
-    'uses' => "ProductsController@showOneProduct"
-]);
-Route::post('/products/create', [
-   'as' => 'products.create',
-   'uses' => 'ProductsController@createProduct'
-]);
-Route::delete('/products/{id}/', [
-    'as' => 'products.delete',
-    'uses' => 'ProductsController@destroy'
-]);
+
