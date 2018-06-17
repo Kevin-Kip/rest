@@ -25,6 +25,10 @@ Route::get('/products/{id}', [
     'as' => "products.one",
     'uses' => "ProductsController@showOneProduct"
 ]);
+Route::put('/products/{id}', [
+    'as' => "products.update",
+    'uses' => "ProductsController@updateProduct"
+]);
 Route::post('/products/create', [
     'as' => 'products.create',
     'uses' => 'ProductsController@createProduct'

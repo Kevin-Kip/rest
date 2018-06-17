@@ -15,8 +15,19 @@ class ProductsController extends Controller
         return Product::findOrFail($id);
     }
 
+    public function updateProduct(Request $request,$id){
+        $product = Product::findOrFail($id);
+        if($product->update($request->all())){
+            return "Updated";
+        }
+    }
+
     public function createProduct(Request $request){
-        return Product::create($request->all());
+        if (Product::create($request->all())){
+            return Product::all();
+        } else {
+            return "Could not create product";
+        }
     }
 
     public function deleteProduct($id){
@@ -27,7 +38,7 @@ class ProductsController extends Controller
         }
 
         if($product->delete()){
-            return "product deleted";
+            return Product::all();
         } else {
             return "Cannot delete";
         }
